@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">StreamCine</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="back_button">Back</string>
+    <string name="authentification">authentification</string>
+    <string name="movie_details">movie_details</string>
+    <string name="search">search</string>
 </resources>

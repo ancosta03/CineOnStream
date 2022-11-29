@@ -10,7 +10,9 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.lifecycleScope
+import com.example.streamcine.ui.theme.StreamCineTheme
 import kotlinx.coroutines.delay
 
 class SplashActivity : ComponentActivity() {
@@ -24,25 +26,12 @@ class SplashActivity : ComponentActivity() {
             finish()
         }
         setContent {
-
-            logoDisplay()
-
-            /*
-            LanOrganizerTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
-            */
+            LogoDisplay()
         }
     }
 }
 
-
 @Composable
-fun logoDisplay() { // name: String
+fun LogoDisplay() { // name: String
     Text(text = "StreamCine")
 }
