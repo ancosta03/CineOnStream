@@ -150,7 +150,7 @@ private fun NavigationDrawerContent(navController: NavController, modifier: Modi
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppScreen(windowsSize: WindowSizeClass, modifier: Modifier = Modifier) {
+fun     AppScreen(windowsSize: WindowSizeClass, modifier: Modifier = Modifier) {
     val navController = rememberNavController()
 
     when(windowsSize.widthSizeClass){

@@ -101,5 +101,3 @@ fun DefaultPreview2() {
         Background()
     }
 }
-
-
