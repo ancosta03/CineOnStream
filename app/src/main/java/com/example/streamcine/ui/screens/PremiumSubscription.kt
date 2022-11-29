@@ -4,6 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 
 @Composable
-fun Search(navController: NavController) {
+fun PremiumSubscription(navController: NavController) {
 
 }
