@@ -3,10 +3,10 @@ package com.example.streamcine
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.streamcine.ui.theme.StreamCineTheme
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
-import com.example.streamcine.ui.screens.MainScreen
+import com.example.streamcine.ui.screens.AppScreen
+import com.example.streamcine.ui.theme.StreamCineTheme
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             StreamCineTheme {
                 val windowSize = calculateWindowSizeClass(this)
-                MainScreen(windowSize)
+                AppScreen(windowSize)
             }
         }
     }

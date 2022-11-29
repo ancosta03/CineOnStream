@@ -1,8 +1,12 @@
 <resources>
-    <string name="app_name">StreamCine</string>
+    <string name="app_name">CineStream</string>
+    <string name="main_screen">Main Screen</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="search">Search</string>
+    <string name="my_account">My Account</string>
+    <string name="premium_subscription">Premium</string>
+    <string name="splashscreen">Splashscreen</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="back_button">Back</string>
-    <string name="authentification">authentification</string>
-    <string name="movie_details">movie_details</string>
-    <string name="search">search</string>
+    <string name="navigation_drawer">Navigation Drawer</string>
 </resources>

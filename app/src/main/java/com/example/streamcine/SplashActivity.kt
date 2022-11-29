@@ -10,13 +10,13 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.lifecycleScope
 import com.example.streamcine.ui.theme.StreamCineTheme
 import kotlinx.coroutines.delay
+import com.example.streamcine.R
 
 class SplashActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lifecycleScope.launchWhenCreated {
@@ -26,12 +26,21 @@ class SplashActivity : ComponentActivity() {
             finish()
         }
         setContent {
-            LogoDisplay()
+            StreamCineTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    displaySplashscreen()
+                }
+            }
         }
     }
 }
 
 @Composable
-fun LogoDisplay() { // name: String
-    Text(text = "StreamCine")
+fun displaySplashscreen() {
+    Text(text = stringResource(R.string.splashscreen))
+    //TODO Mettre le logo
 }
