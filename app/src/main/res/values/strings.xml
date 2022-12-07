@@ -9,4 +9,5 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="back_button">Back</string>
     <string name="navigation_drawer">Navigation Drawer</string>
+    <string name="title_activity_movie">MovieActivity</string>
 </resources>
