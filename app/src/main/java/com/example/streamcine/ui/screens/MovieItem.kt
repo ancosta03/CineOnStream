@@ -36,23 +36,22 @@ fun MovieItem(movie: MovieModel) {
                     .fillMaxSize()
             ) {
 
-                Image(
-                    painter = rememberImagePainter(
-                        data = movie.imageUrl,
-
-                        builder = {
-                            scale(Scale.FILL)
-                            placeholder(coil.compose.base.R.drawable.notification_action_background)
-                            transformations(CircleCropTransformation())
-
-                        }
-                    ),
-                    contentDescription = movie.desc,
-                    modifier = Modifier
-                        .fillMaxHeight()
-                        .weight(0.2f)
-                )
-
+//                Image(
+//                    painter = rememberImagePainter(
+//                        data = movie.imageUrl,
+//
+//                        builder = {
+//                            scale(Scale.FILL)
+//                            placeholder(coil.compose.base.R.drawable.notification_action_background)
+//                            transformations(CircleCropTransformation())
+//
+//                        }
+//                    ),
+//                    contentDescription = movie.desc,
+//                    modifier = Modifier
+//                        .fillMaxHeight()
+//                        .weight(0.2f)
+//                )
 
                 Column(
                     verticalArrangement = Arrangement.Center,
