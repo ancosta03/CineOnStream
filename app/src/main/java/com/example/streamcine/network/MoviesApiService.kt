@@ -21,8 +21,8 @@ private val retrofit = Retrofit.Builder()
 interface MoviesApiService {
     @GET("photos")
     suspend fun getMovies() : List<MovieModel>
-    suspend fun getMovieDetails() : String
-    suspend fun getMovieTrailer() : String
+    //suspend fun getMovieDetails() : String
+    //suspend fun getMovieTrailer() : String
 }
 
 object MoviesApi {

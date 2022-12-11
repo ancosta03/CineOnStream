@@ -1,5 +1,6 @@
 package com.example.streamcine
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -26,6 +27,7 @@ class MainActivity : ComponentActivity() {
 
     private val movieViewModel by viewModels<MovieViewModel>()
 
+    @SuppressLint("LongLogTag")
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +36,12 @@ class MainActivity : ComponentActivity() {
                 val windowSize = calculateWindowSizeClass(activity = this)
                 AppScreen(windowsSize = windowSize)
                 Surface(color = MaterialTheme.colors.background) {
-                    //MovieList(movieList = movieViewModel.movies)
-                    DefaultP()
+//                    MovieList(movieList = movieViewModel.movies)
+//                    DefaultP()
                     movieViewModel.getMovies()
+                    Log.e("Voici la liste de films : ", movieViewModel.movies.toString())
+                    Log.e("Nombre de films : ", movieViewModel.movies.size.toString())
+                    MovieList(movieViewModel.movies)
                 }
             }
         }
@@ -55,7 +60,7 @@ fun MovieList(movieList: List<MovieModel>) {
 @Composable
 fun DefaultP() {
     StreamCineTheme {
-        val movie = MovieModel("Developer's Says", "Hi Guys !", "", "Hello", "Action")
+        val movie = MovieModel("Developer's Says", "Hi Guys !")
         MovieItem(movie = movie)
     }
 }

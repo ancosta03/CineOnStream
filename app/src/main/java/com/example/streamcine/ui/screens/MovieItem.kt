@@ -61,12 +61,12 @@ fun MovieItem(movie: MovieModel) {
                         .weight(0.8f)
                 ) {
                     Text(
-                        text = movie.name,
+                        text = movie.id,
                         style = MaterialTheme.typography.subtitle1,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = movie.category,
+                        text = movie.img_src,
                         style = MaterialTheme.typography.caption,
                         modifier = Modifier
                             .background(
@@ -74,12 +74,12 @@ fun MovieItem(movie: MovieModel) {
                             )
                             .padding(4.dp)
                     )
-                    Text(
-                        text = movie.desc,
-                        style = MaterialTheme.typography.body1,
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis
-                    )
+//                    Text(
+//                        text = movie.desc,
+//                        style = MaterialTheme.typography.body1,
+//                        maxLines = 2,
+//                        overflow = TextOverflow.Ellipsis
+//                    )
 
                 }
             }
