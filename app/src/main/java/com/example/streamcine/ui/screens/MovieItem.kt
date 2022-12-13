@@ -17,7 +17,9 @@ import androidx.compose.material.Surface
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-
+import coil.compose.rememberImagePainter
+import coil.size.Scale
+import coil.transform.CircleCropTransformation
 
 
 @Composable
@@ -36,23 +38,22 @@ fun MovieItem(movie: MovieModel) {
                     .fillMaxSize()
             ) {
 
-//                Image(
-//                    painter = rememberImagePainter(
-//                        data = movie.imageUrl,
-//
-//                        builder = {
-//                            scale(Scale.FILL)
-//                            placeholder(coil.compose.base.R.drawable.notification_action_background)
-//                            transformations(CircleCropTransformation())
-//
-//                        }
-//                    ),
-//                    contentDescription = movie.desc,
-//                    modifier = Modifier
-//                        .fillMaxHeight()
-//                        .weight(0.2f)
-//                )
+                Image(
+                    painter = rememberImagePainter(
+                        data = "",
 
+                        builder = {
+                            scale(Scale.FILL)
+                            placeholder(coil.compose.base.R.drawable.notification_action_background)
+                            transformations(CircleCropTransformation())
+
+                        }
+                    ),
+                    contentDescription = movie.overview,
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .weight(0.2f)
+                )
                 Column(
                     verticalArrangement = Arrangement.Center,
                     modifier = Modifier
@@ -61,12 +62,12 @@ fun MovieItem(movie: MovieModel) {
                         .weight(0.8f)
                 ) {
                     Text(
-                        text = movie.id,
+                        text = movie.original_title,
                         style = MaterialTheme.typography.subtitle1,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = movie.img_src,
+                        text = "Popularity : " + movie.popularity,
                         style = MaterialTheme.typography.caption,
                         modifier = Modifier
                             .background(
@@ -74,13 +75,18 @@ fun MovieItem(movie: MovieModel) {
                             )
                             .padding(4.dp)
                     )
-//                    Text(
-//                        text = movie.desc,
-//                        style = MaterialTheme.typography.body1,
-//                        maxLines = 2,
-//                        overflow = TextOverflow.Ellipsis
-//                    )
-
+                    Text(
+                        text = "Note : " + movie.vote_average + "/10",
+                        style = MaterialTheme.typography.body1,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    Text(
+                        text = "Vote : " + movie.vote_count,
+                        style = MaterialTheme.typography.body1,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis
+                    )
                 }
             }
         }

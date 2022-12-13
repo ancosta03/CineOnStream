@@ -3,6 +3,7 @@ package com.example.streamcine
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.println
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -22,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.streamcine.data.models.MovieModel
 import com.example.streamcine.ui.screens.AppScreen
 import com.example.streamcine.ui.screens.MovieItem
+import java.sql.DriverManager.println
 
 class MainActivity : ComponentActivity() {
 
@@ -36,11 +38,7 @@ class MainActivity : ComponentActivity() {
                 val windowSize = calculateWindowSizeClass(activity = this)
                 AppScreen(windowsSize = windowSize)
                 Surface(color = MaterialTheme.colors.background) {
-//                    MovieList(movieList = movieViewModel.movies)
-//                    DefaultP()
                     movieViewModel.getMovies()
-                    Log.e("Voici la liste de films : ", movieViewModel.movies.toString())
-                    Log.e("Nombre de films : ", movieViewModel.movies.size.toString())
                     MovieList(movieViewModel.movies)
                 }
             }
@@ -57,10 +55,3 @@ fun MovieList(movieList: List<MovieModel>) {
     }
 }
 
-@Composable
-fun DefaultP() {
-    StreamCineTheme {
-        val movie = MovieModel("Developer's Says", "Hi Guys !")
-        MovieItem(movie = movie)
-    }
-}

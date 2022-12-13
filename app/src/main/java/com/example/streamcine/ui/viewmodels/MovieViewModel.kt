@@ -1,5 +1,6 @@
 package com.example.streamcine.ui.viewmodels
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -17,11 +18,15 @@ class MovieViewModel : ViewModel() {
     public fun getMovies() {
         viewModelScope.launch {
             try {
-                val movieList = MoviesApi.retrofitService.getMovies() as MutableList<MovieModel>
-                movies = movieList
+                for(i in 550..552) {
+                    val movie = MoviesApi.retrofitService.getMovies(i)
+                    movies.add(movie)
+                    Log.e("CO Liste de films : ", movies.toString())
+                }
             }
             catch(e : Exception) {
                 errorMessage = e.message.toString()
+                Log.e("Eroor", errorMessage)
             }
         }
     }
