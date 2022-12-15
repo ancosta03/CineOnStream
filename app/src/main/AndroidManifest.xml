@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.streamcine">
+    package="io.tech4fun.lanorganizer">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
+        android:name=".CineOnStreamApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,13 +16,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.StreamCine"
+        android:theme="@style/Theme.LanOrganizer"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <service
+            android:name=".services.MyForegroundService"
+            android:enabled="true"
+            android:exported="true"></service>
+        <service
+            android:name=".services.MyBoundService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:label="@string/title_activity_splash"
-            android:theme="@style/Theme.StreamCine">
+            android:theme="@style/Theme.LanOrganizer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +43,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.StreamCine"></activity>
+            android:theme="@style/Theme.LanOrganizer" />
     </application>
 
 </manifest>
